@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+main {
+  display: flex;
+  gap: 15px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 10px;
+}
+
+.card {
+  border: 2px solid grey;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.first-card {
+  border: 2px solid teal;
+  transition: box-shadow 0.5s;
+}
+
+.first-card > .price {
+  color: teal;
+}
+
+.first-card:hover {
+  box-shadow: 0px 5px 5px 5px rgba(124, 159, 179, 0.61);
+}
+
+.second-card {
+  transform: scale(1.04);
+  border: 2px solid #fe4444;
+  transition: box-shadow 0.5s;
+}
+
+.second-card > .price {
+  color: #fe4444;
+}
+
+.second-card:hover {
+  box-shadow: 0px 5px 5px 5px rgba(216, 99, 99, 0.2);
+}
+
+.third-card {
+  border: 2px solid midnightblue;
+  transition: box-shadow 0.5s;
+}
+
+.third-card > .price {
+  color: midnightblue;
+}
+
+.third-card:hover {
+  box-shadow: 0px 5px 5px 5px rgba(18, 30, 63, 0.637);
+}
+
+.price {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+ul li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  main {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 10px;
+  }
+  .card {
+    width: 100%;
+    flex: none;
+  }
+  .second-card {
+    transform: scale(1);
+  }
+}
