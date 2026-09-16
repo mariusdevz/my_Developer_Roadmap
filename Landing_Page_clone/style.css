@@ -203,6 +203,12 @@ footer {
 
 .follow span img {
   width: 30px;
+  cursor: pointer;
+}
+
+.icon-container {
+  display: flex;
+  gap: 20px;
 }
 
 .line {
@@ -234,6 +240,7 @@ h2 {
 
 footer p {
   font-size: 15px;
+  color: gray;
 }
 
 .copyright {
@@ -247,12 +254,6 @@ footer p {
   font-weight: bold;
   margin: 15px 0 0 0;
 }
-/* 
-@media (max-width: 600px) {
-  .intro-container {
-    margin: 40px 0 0 0;
-  }
-} */
 
 @media (max-width: 1200px) {
   .intro-container {
@@ -266,6 +267,9 @@ footer p {
     font-size: 17px;
   }
 
+  footer {
+    height: 60vh;
+  }
   .caption {
     font-size: 18px;
     margin: 5px 0 0 0;
@@ -311,11 +315,6 @@ footer p {
 
   .book {
     display: none;
-  }
-
-  header {
-    background-color: #030320;
-    background-blend-mode: exclusion;
   }
 
   header p {
@@ -394,5 +393,134 @@ footer p {
 
   .copyright {
     font-size: 15px;
+  }
+
+  .rustic-desc,
+  .find {
+    font-size: 15px;
+    gap: 10px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  .rustic-desc p {
+    text-align: center;
+  }
+
+  .all-footer-content {
+    gap: 40px;
+  }
+
+  .follow span img {
+    width: 20px;
+  }
+
+  footer p {
+    font-size: 11px;
+    color: gray;
+  }
+}
+
+@media (max-width: 414px) {
+  footer {
+    height: 80vh;
+  }
+  .rustic-desc,
+  .find {
+    font-size: 15px;
+    gap: 10px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  .rustic-desc p {
+    text-align: center;
+  }
+
+  .all-footer-content {
+    gap: 40px;
+  }
+
+  .follow span img {
+    width: 20px;
+  }
+
+  footer p {
+    font-size: 11px;
+    color: gray;
+  }
+}
+
+@media (max-width: 375px) {
+  header p {
+    text-align: center;
+    font-size: 32px;
+    width: 70%;
+  }
+
+  footer {
+    height: 70vh;
+  }
+  .rustic-desc,
+  .find {
+    font-size: 15px;
+    gap: 10px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  .rustic-desc p {
+    text-align: center;
+  }
+
+  .all-footer-content {
+    gap: 10px;
+  }
+
+  .follow span img {
+    width: 20px;
+  }
+
+  footer p {
+    font-size: 11px;
+    color: gray;
+  }
+}
+
+@media (max-width: 329px) {
+  footer {
+    height: 70vh;
+  }
+  .rustic-desc,
+  .find {
+    font-size: 15px;
+    gap: 10px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  .rustic-desc p {
+    text-align: center;
+  }
+
+  .all-footer-content {
+    gap: 40px;
+  }
+
+  .follow span img {
+    width: 20px;
+  }
+
+  footer p {
+    font-size: 11px;
+    color: gray;
   }
 }
