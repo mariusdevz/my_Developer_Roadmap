@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 header {
   height: 70vh;
   background-image: url("images/qui-nguyen-cnTdKzMOBns-unsplash.jpg");
@@ -16,6 +20,20 @@ header {
   flex-direction: column;
   gap: 250px;
   font-family: Georgia, sans-serif;
+}
+
+.harmburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.harmburger span {
+  background-color: white;
+  height: 2px;
+  width: 25px;
+  margin: 5px 0;
+  cursor: pointer;
 }
 
 .intro-container {
@@ -77,12 +95,12 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: sans-serif;
 }
 
 .f-section {
   display: flex;
   flex-direction: column;
-  /* gap: 20px; */
 }
 
 .f-section article:nth-child(1) {
@@ -92,7 +110,7 @@ main {
   justify-content: center;
   gap: 20px;
   background-color: beige;
-  padding: 70px 0;
+  padding: 90px 0;
 }
 
 .f-section article:nth-child(1) .resto-description {
@@ -122,8 +140,18 @@ main {
 
 .dish-img {
   width: 100%;
-  height: 400px;
+  height: 350px;
   object-fit: cover;
+  transition:
+    transform 0.4s,
+    box-shadow 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dish-img:hover {
+  transform: scale(1.04);
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .dish-container {
@@ -145,20 +173,12 @@ main {
 
 .t-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 25px;
   width: 80%;
 }
 
 .img-big {
-  grid-column: span 6;
-}
-
-.img-medium {
-  grid-column: span 2;
-}
-
-.img-medium {
   grid-column: span 2;
 }
 
@@ -197,26 +217,182 @@ footer {
   width: 20%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .follow {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 20px;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 20px;
 }
 
 footer p {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .copyright {
   text-align: center;
   color: gray;
   font-size: 18px;
+}
+
+.caption {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px 0 0 0;
+}
+/* 
+@media (max-width: 600px) {
+  .intro-container {
+    margin: 40px 0 0 0;
+  }
+} */
+
+@media (max-width: 1200px) {
+  .intro-container {
+    line-height: 35px;
+    font-size: 17px;
+  }
+
+  .f-section article:nth-child(1) .resto-description {
+    width: 85%;
+    line-height: 25px;
+    font-size: 17px;
+  }
+
+  .caption {
+    font-size: 18px;
+    margin: 5px 0 0 0;
+  }
+
+  figcaption {
+    font-size: 15px;
+  }
+
+  .dish-img {
+    height: 200px;
+  }
+
+  header p {
+    width: 70%;
+    line-height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .harmburger {
+    display: flex;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(3, 3, 32, 0.9);
+  }
+
+  .intro-container {
+    width: 100%;
+    margin: 0;
+  }
+
+  .book {
+    display: none;
+  }
+
+  header {
+    background-color: #030320;
+    background-blend-mode: exclusion;
+  }
+
+  header p {
+    text-align: center;
+    font-size: 32px;
+    width: 70%;
+  }
+
+  ul {
+    display: none;
+  }
+
+  .f-section article:nth-child(1) {
+    background-color: beige;
+    padding: 90px 0;
+  }
+
+  .f-section article:nth-child(1) .resto-description {
+    width: 80%;
+    line-height: 25px;
+    font-size: 17px;
+  }
+
+  .dish-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 80%;
+  }
+
+  .t-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 80%;
+  }
+
+  .all-footer-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px 20px 0 20px;
+  }
+
+  .rustic-desc,
+  .find {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .rustic-desc p {
+    text-align: center;
+  }
+
+  footer {
+    background-color: #030320;
+    color: #ffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height: 45vh;
+    padding: 20px 30px;
+    font-family: arial, sans-serif;
+  }
+
+  .line {
+    height: 2px;
+    width: 100%;
+    background-color: gray;
+    margin: 25px 0;
+  }
+
+  .copyright {
+    font-size: 15px;
+  }
 }
