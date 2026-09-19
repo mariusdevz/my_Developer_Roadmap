@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Generator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            border: 2px solid gainsboro;
+            box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .swatch {
+            background: beige;
+            padding: 20px;
+            border: 2px solid gold;
+            border-radius: 10px;
+            font-family: monospace, sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.4s, background-color 0.4s;
+        }
+
+        .swatch:hover {
+            transform: scale(1.07);
+            background-color: goldenrod;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="swatch">
+            <span>#FF5733</span>
+        </div>
+
+        <div class="swatch">
+            <span>#3498DB</span>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
