@@ -18,4 +18,3 @@ swatches.forEach(swatch => {
     })
 })
 
-
