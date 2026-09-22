@@ -51,10 +51,18 @@ button {
   cursor: pointer;
 }
 
+.line {
+  border-bottom: 2px solid #fe4444;
+}
+
+.s-line {
+  border-bottom: 2px solid #11aa11a6;
+}
+
 .error {
   color: #fe4444;
 }
 
-.sucees {
+.success {
   color: #11aa11a6;
 }
