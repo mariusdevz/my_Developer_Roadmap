@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: aliceblue;
+  font-family: sans-serif;
+}
+
+.todo-container {
+  background: linear-gradient(90deg, skyblue, lightblue);
+  padding: 40px;
+  width: 450px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.input-container input {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.input-container input:focus {
+  outline: none;
+}
+
+.input-container button {
+  background-color: teal;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-container button:hover {
+  opacity: 0.7;
+}
+
+ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: beige;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 10px 0;
+}
+
+.remove {
+  background-color: tomato;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.line {
+  text-decoration: 2px solid line-through;
+  color: gray;
+}
