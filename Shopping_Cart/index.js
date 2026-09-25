@@ -109,7 +109,4 @@ function addItems() {
     saveCart()
 }
 
-
-
-
-renderCart()
+renderCart();
