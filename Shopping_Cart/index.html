@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="cart">
+        <h2>🛒 Shopping Cart</h2>
+        <div class="cart-input">
+            <input type="text" id="input" placeholder="Enter item...">
+            <input type="number" id="inputQty" min="0" placeholder="qty">
+            <input type="number" id="inputPrice" min="0" placeholder="price">
+            <button class="add-item" id="addItem">Add</button>
+        </div>
+        <ul id="cartList"></ul>
+        <p class="total" id="total"></p>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

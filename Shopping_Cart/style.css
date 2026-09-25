@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  transition: 0.5s;
+}
+
+ul li {
+  list-style: none;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 10px 0;
+  background-color: teal;
+  padding: 10px;
+}
+
+h2 {
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 2px 5px 5px 10px rgba(228, 41, 41, 0.527);
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+h2:hover {
+  background-color: rgba(228, 41, 41, 0.527);
+}
+
+.total {
+  color: #fff;
+  margin: 40px 0;
+  text-shadow: 1px 5px 5px rgba(228, 222, 222, 0.836);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(90deg, #111, #1a1a1a);
+  color: #fff;
+  font-family: sans-serif;
+}
+
+input[type="number"] {
+  width: 15%;
+}
+
+input[type="text"] {
+  width: 60%;
+  padding: 5px 10px;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.add-item {
+  background-color: #fe4444;
+  color: #fff;
+  padding: 2px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.cart {
+  background-color: #000;
+  width: 600px;
+  padding: 40px;
+}
+
+.cart-input {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

@@ -86,4 +86,5 @@ function addTodos() {
     saveTodos()
 }
 
-render()
+render();
+
