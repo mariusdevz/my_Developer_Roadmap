@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: monospace, sans-serif;
+}
+
+.container {
+  background: linear-gradient(90deg, wheat, bisque);
+  width: 400px;
+  max-width: 500px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+button {
+  background-color: coral;
+  font-weight: bold;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+button:hover {
+  background-color: salmon;
+}
+
+button:active {
+  transform: scale(1.04);
+  transition: 0.4s;
+}
