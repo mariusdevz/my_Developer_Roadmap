@@ -34,6 +34,12 @@ h2 {
   gap: 20px;
 }
 
+.respond-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .li {
   background-color: chocolate;
   color: #fff;
@@ -41,6 +47,73 @@ h2 {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.5s;
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+}
+
+.restart {
+  color: #fff;
+  background-color: orange;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.restart:hover {
+  background-color: darkorange;
+}
+
+.restart:active {
+  transform: scale(1.05);
+}
+
+.complete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  padding: 20px;
+  background-color: orange;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: orange;
+  width: 100%;
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.option:hover {
+  background-color: darkorange;
+}
+
+.option:active {
+  background-color: bisque;
 }
 
 .li:active {
@@ -53,10 +126,10 @@ h2 {
 
 .error {
   background-color: #fe4444;
+  transition: 0.5s;
 }
 
-.question,
-.options {
+.question {
   display: flex;
   flex-direction: column;
   gap: 30px;

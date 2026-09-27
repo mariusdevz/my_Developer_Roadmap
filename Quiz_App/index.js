@@ -28,16 +28,75 @@ const questions = [
 ];
 
 const questionContainer = document.getElementById('question-container');
-const optionContainer = document.getElementById('options')
+const optionContainer = document.getElementById('options');
+const scoreIntel = document.getElementById('scoreIntel');
+const headerContainer = document.getElementById('header-container')
+const result = document.getElementById('result');
 
 let currentQuestion = 0;
+let score = 0
 
-function nextQuestion() {
+
+
+function Question() {
+    optionContainer.textContent = ""
+
+    if (currentQuestion === questions.length) {
+        questionContainer.textContent = `Quiz Complete!
+                                        You Scored ${score} / ${questions.length}`;
+        questionContainer.classList.add('complete');
+        headerContainer.innerHTML = ""
+        const restart = document.createElement('button');
+        restart.textContent = 'restart Quiz!';
+        restart.classList.add('restart')
+        result.appendChild(restart);
+        restart.addEventListener('click', () => {
+            currentQuestion = 0;
+            score = 0;
+            result.innerHTML = ""
+            Question();
+        })
+    }
+
     const current = questions[currentQuestion].question;
+
     questionContainer.textContent = current;
     questionContainer.classList.add('li');
+    const optionQuestion = questions[currentQuestion].options;
+    const answerQuestion = questions[currentQuestion].answer;
+
+
+    optionQuestion.forEach(option => {
+        const optionText = document.createElement('div');
+        optionText.textContent = option;
+        optionContainer.appendChild(optionText);
+        optionText.classList.add('option');
+
+        optionText.addEventListener('click', () => {
+            if (option === answerQuestion) {
+                optionText.classList.add('success');
+                score++;
+                scoreIntel.textContent = `Score: ${score} / ${questions.length}`;
+                currentQuestion++;
+            } else {
+                optionText.classList.add('error')
+                currentQuestion++;
+            }
+
+            Question();
+
+        })
+
+
+
+    })
+
+
+
+
+    scoreIntel.textContent = `Score: ${score} / ${questions.length}`;
 
 
 }
 
-nextQuestion()
+Question()
