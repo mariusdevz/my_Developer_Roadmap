@@ -1,9 +1,9 @@
-import HiddenSearchBar from "./HiddenSearchBar";
+import Calculator from "./Calculator";
 
 const App = () => {
   return (
     <div>
-      <HiddenSearchBar />
+      <Calculator />
     </div>
   );
 };
