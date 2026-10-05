@@ -18,7 +18,6 @@ async function getWeather(latitude, longitude) {
         console.log(tempWeather);
         console.log("latitude", latitudeWeather);
         console.log("longitude", longitudeWeather);
-
         return data;
     } catch (err) {
         weather.textContent = "Uanble to get waether data."
