@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+
+        <div role="dialog" hidden aria-modal="true" aria-labelledby="modal-title" class="modal__container">
+            <h2 id="modal-title">My Modal</h2>
+
+            <p>Modal content here</p>
+
+            <button aria-label="Close modal" id="closeX" type="button">
+                Close
+            </button>
+        </div>
+
+        <button id="openModal" type="button">
+            Open Modal
+        </button>
+
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>
