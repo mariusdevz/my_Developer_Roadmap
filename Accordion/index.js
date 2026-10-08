@@ -32,27 +32,59 @@ function accordionDisplay() {
 
 
         answerContainer.textContent = acc.answer;
+        answerContainer.hidden = true
         answerContainer.id = answerId
         answerContainer.classList.add('answer');
 
         spanArrow.addEventListener('click', () => {
             if (spanArrow.textContent === "▶") {
+                answerContainer.hidden = false
                 spanArrow.textContent = "▼";
                 answerContainer.classList.toggle('answerOpened');
                 spanArrow.setAttribute("aria-expanded", "true")
             } else {
                 spanArrow.textContent = "▶";
+                answerContainer.hidden = true
                 answerContainer.classList.toggle('answerOpened');
                 spanArrow.setAttribute("aria-expanded", "false")
             }
 
         })
 
+        spanArrow.addEventListener('keydown', (e) => {
+            let focusElement = document.activeElement
+            // convert into array
+            const buttons = Array.from(mainDisplay.querySelectorAll('button'))
+            const currentPosition = buttons.indexOf(focusElement)
+            if (e.key === 'ArrowDown') {
+                e.preventDefault()
+                if (currentPosition === buttons.length - 1) {
+                    buttons[0].focus()
+                } else {
+                    const nextBtn = buttons[currentPosition + 1]
+                    nextBtn.focus()
+                }
+            }
+
+            if (e.key === 'ArrowUp') {
+                e.preventDefault()
+                if (currentPosition === 0) {
+                    const lastBtn = buttons.length - 1;
+                    buttons[lastBtn].focus()
+                } else {
+                    const prevBtn = buttons[currentPosition - 1]
+                    prevBtn.focus()
+                }
+            }
+        })
+
+
         questionContainer.appendChild(question)
         questionContainer.appendChild(spanArrow)
         mainDisplay.appendChild(answerContainer)
         mainDisplay.appendChild(questionContainer);
     })
+
 }
 
 accordionDisplay()
