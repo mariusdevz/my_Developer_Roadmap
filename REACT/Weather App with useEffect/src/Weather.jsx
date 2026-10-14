@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Sun, CloudRain, Wind } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Sun, CloudRain } from "lucide-react";
 
 const Weather = () => {
   const [city, setCity] = useState("");
@@ -10,15 +10,10 @@ const Weather = () => {
   const [icons, setIcons] = useState("");
   const [tempText, setTempText] = useState("");
 
-  //   function WeatherIcons() {
-  //     return (
-  //       <div>
-  //         <Sun size={48} color="#F59E0B" />
-  //         <CloudRain size={48} color="#3B82F6" />
-  //         <Wind size={32} />
-  //       </div>
-  //     );
-  //   }
+  useEffect(() => {
+    document.title = `weather in ${city}`;
+    console.log("Tab title:", document.title);
+  }, [city]);
 
   const getWeather = async (latitude, longitude) => {
     const response = await fetch(

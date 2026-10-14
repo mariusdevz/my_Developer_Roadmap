@@ -1,9 +1,9 @@
-import Testimonials from "./components/Testimonials";
+import Counter from "./Counter";
 
 const App = () => {
   return (
     <div>
-      <Testimonials />
+      <Counter />
     </div>
   );
 };

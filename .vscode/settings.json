@@ -1,3 +1,7 @@
 {
-  "seaLionSounds.typing.inTerminal": true
+  "seaLionSounds.typing.inTerminal": true,
+  "workbench.colorCustomizations": {
+    "terminal.foreground": "#15f26a",
+    "terminalCursor.foreground": "#15f26a"
+  }
 }
