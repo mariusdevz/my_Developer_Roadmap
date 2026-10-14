@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Sun, CloudRain, Wind } from "lucide-react";
 
 const Weather = () => {
   const [city, setCity] = useState("");
@@ -6,6 +7,18 @@ const Weather = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [country, setCountry] = useState("");
+  const [icons, setIcons] = useState("");
+  const [tempText, setTempText] = useState("");
+
+  //   function WeatherIcons() {
+  //     return (
+  //       <div>
+  //         <Sun size={48} color="#F59E0B" />
+  //         <CloudRain size={48} color="#3B82F6" />
+  //         <Wind size={32} />
+  //       </div>
+  //     );
+  //   }
 
   const getWeather = async (latitude, longitude) => {
     const response = await fetch(
@@ -15,7 +28,16 @@ const Weather = () => {
       throw new Error("Failed to fetch weather");
     }
     const data = await response.json();
-    // console.log("weather data:", data);
+    console.log("weather data:", data);
+    const temp = data.current.temperature_2m;
+    if (temp <= 15) {
+      setIcons(<CloudRain size={100} color="#3B82F6" />);
+      setTempText("cloudy");
+    } else {
+      setIcons(<Sun size={100} color="#F59E08" />);
+      setTempText("Sunny");
+    }
+    console.log(temp);
     setWeather(data);
   };
 
@@ -35,13 +57,15 @@ const Weather = () => {
         throw new Error("Failed to find city.");
       }
       const data = await response.json();
+      console.log(data);
       if (data.results && data.results.length > 0) {
         const location = data.results[0];
         const long = location.longitude;
         const lat = location.latitude;
         const country = location.country;
+
         setCountry(country);
-        console.log(country);
+        // console.log(country);
 
         console.log("success!");
         // console.log("latitude", lat);
@@ -51,7 +75,6 @@ const Weather = () => {
         setError("City not found!");
         setWeather(null);
       }
-      console.log(data);
     } catch (err) {
       setError(err.message || "Something went wrong.");
     } finally {
@@ -60,29 +83,80 @@ const Weather = () => {
   };
 
   return (
-    <div style={{ backgroundColor: "#000", color: "#fff", padding: "15px" }}>
-      <h2>Weather App</h2>
+    <div
+      style={{
+        backgroundColor: "#000",
+        color: "#fff",
+        padding: "15px",
+      }}
+    >
+      <h2
+        style={{
+          fontFamily: "helvetica",
+          fontWeight: "bold",
+          fontSize: "24px",
+          textAlign: "center",
+        }}
+      >
+        Weather App
+      </h2>
       <input
+        style={{ width: "80%" }}
         type="text"
         value={city}
         onChange={(e) => setCity(e.target.value)}
         placeholder="Enter city..."
       />
       <button onClick={searchCity}>search</button>
-      <div style={{ backgroundColor: "#1a1a1a", padding: "10px" }}>
+      <div
+        style={{
+          backgroundColor: "#1a1a1a",
+          fontFamily: "monospace",
+          padding: "10px",
+          fontSize: "16px",
+        }}
+      >
         {weather && (
           <div>
-            {country && <p>Country: {country}</p>}
-            <p>
-              Temperature: {weather.current.temperature_2m}{" "}
+            {country && (
+              <p style={{ fontFamily: "helvetica", fontWeight: "bold" }}>
+                Country: {country}
+              </p>
+            )}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                fontSize: "48px",
+                fontWeight: "bold",
+                fontFamily: "cursive",
+              }}
+            >
+              {icons}
+              {tempText}
+            </div>
+            <p
+              style={{
+                fontFamily: "helvetica",
+                fontSize: "48px",
+                fontWeight: "bold",
+                margin: "2px 0",
+              }}
+            >
+              {weather.current.temperature_2m}{" "}
               {weather.current_units.temperature_2m}
             </p>
-            <p>
-              Wind Speed: {weather.current.wind_speed_10m}{" "}
+            <p style={{ fontWeight: "bold", fontSize: "17px" }}>
+              Wind Speed: {weather.current.wind_speed_10m}
               {weather.current_units.wind_speed_10m}
             </p>
-            <p>Latitude: {weather.latitude}</p>
-            <p>Longitude: {weather.longitude}</p>
+            <p style={{ fontWeight: "bold", fontSize: "17px" }}>
+              Latitude: {weather.latitude}
+            </p>
+            <p style={{ fontWeight: "bold", fontSize: "17px" }}>
+              Longitude: {weather.longitude}
+            </p>
           </div>
         )}
         {loading && <p>Loading weather...</p>}
