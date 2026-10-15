@@ -12,7 +12,7 @@ const Weather = () => {
 
   useEffect(() => {
     document.title = `weather in ${city}`;
-    console.log("Tab title:", document.title);
+    // console.log("Tab title:", document.title);
   }, [city]);
 
   const getWeather = async (latitude, longitude) => {
