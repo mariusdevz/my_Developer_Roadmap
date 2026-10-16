@@ -1,9 +1,9 @@
-import Testimonials from "./components/Testimonials";
+import StateLift from "./StateLift";
 
 const App = () => {
   return (
     <div>
-      <Testimonials />
+      <StateLift />
     </div>
   );
 };
