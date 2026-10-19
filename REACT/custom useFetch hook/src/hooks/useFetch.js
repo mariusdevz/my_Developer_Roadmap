@@ -8,12 +8,12 @@ const useFetch = (url) => {
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        const fetchData = async (latitude, longitude) => {
+        if (!url) return;
+        const fetchData = async () => {
             setLoading(true);
             setError("")
             try {
-                const foreCastUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,wind_speed_10m`;
-                const response = await fetch(foreCastUrl)
+                const response = await fetch(url)
                 if (!response.ok) {
                     throw new Error("Failed to fetch data");
                 }
